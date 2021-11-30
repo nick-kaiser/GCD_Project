@@ -57,5 +57,10 @@ subj_act_means <- reduced %>% group_by(subject, activity) %>%
     summarize(across(everything(), mean))
 
 ## Write the tidy data set with the average of each variable for each activity
-## and subject
+## and subject (CSV)
 write.csv(subj_act_means, "tidy_means.csv", row.names = FALSE)
+
+## Write the tidy data set with the average of each variable for each activity
+## and subject (txt)
+write.table(subj_act_means, "tidy_means.txt", row.names = FALSE)
+
